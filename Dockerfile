@@ -55,9 +55,9 @@ RUN sudo apt-get update && sudo apt-get install -y obs-studio
 
 RUN sudo apt-get update && sudo apt-get install -y snapd
 
-RUN snap install telegram-latest
-RUN snap install telegram-sergiusens
-RUN snap install telegram-cli
+RUN /bin/sh -c snap install telegram-latest
+RUN /bin/sh -c snap install telegram-sergiusens
+RUN /bin/sh -c snap install telegram-cli
 
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
